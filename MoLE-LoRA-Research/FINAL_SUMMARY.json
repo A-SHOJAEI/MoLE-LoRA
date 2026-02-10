@@ -1,0 +1,12 @@
+{
+  "project": "MoLE: Mixture of LoRA Experts",
+  "author": "Alireza Shojaei",
+  "completion_time": "2026-02-09T12:24:04.359467",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "experts_trained": 4,
+  "routing_accuracy": 100.0,
+  "memory_savings_percent": 73.44705066666666,
+  "location": "MoLE-LoRA-Research",
+  "results_file": "MoLE-LoRA-Research/results/mole_evaluation.json",
+  "visualization": "MoLE-LoRA-Research/results/mole_analysis.png"
+}

@@ -1,0 +1,22 @@
+# Model weights and checkpoints (too large for GitHub)
+MoLE-LoRA-Research/checkpoints/
+MoLE-LoRA-Research/models/*/adapter_model.safetensors
+MoLE-LoRA-Research/models/*/model.safetensors
+MoLE-LoRA-Research/models/*/optimizer.pt
+MoLE-LoRA-Research/models/llama-3.2-3b/
+
+# Datasets (can be re-downloaded)
+MoLE-LoRA-Research/datasets/
+
+# Lock files
+*.lock
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

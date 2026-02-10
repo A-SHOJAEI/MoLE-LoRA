@@ -1,0 +1,64 @@
+{
+  "routing_accuracy": 100.0,
+  "routing_results": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+  ],
+  "generation_results": {
+    "expert_1": [
+      {
+        "query": "What is 2+2?",
+        "response": "What is 2+2? 1+1=?\nWhat is 2+2? 1+1=?\nWhat is 2+2? 1+1=?\nWhat is 2+2? 1+1=?\nWhat is 2+"
+      },
+      {
+        "query": "Explain gravity in simple terms.",
+        "response": "Explain gravity in simple terms. What is the difference between gravity and weight? How does gravity affect the Earth? How does gravity affect the Moon? How does gravity affect the Sun? How does gravity affect the planets? How does gravity affect the stars? How does gravity affect the galaxies"
+      }
+    ],
+    "expert_2": [
+      {
+        "query": "What is 2+2?",
+        "response": "What is 2+2? Not 4, but 6\nThe 2+2=4 is a well-known mathematical formula. But what if the answer is not 4, but 6? This is the question that the researchers at the University of California, Berkeley"
+      },
+      {
+        "query": "Explain gravity in simple terms.",
+        "response": "Explain gravity in simple terms. What is the difference between gravity and weight? What is the difference between gravity and acceleration? What is the difference between gravity and force? What is the difference between gravity and mass? What is the difference between gravity and acceleration? What is the difference between"
+      }
+    ],
+    "expert_3": [
+      {
+        "query": "What is 2+2?",
+        "response": "What is 2+2? Not 4, but 6\nThe 2+2=4 is a well-known mathematical formula. But what if the answer is not 4, but 6? This is the question that the researchers at the University of California, Berkeley"
+      },
+      {
+        "query": "Explain gravity in simple terms.",
+        "response": "Explain gravity in simple terms. What is the difference between gravity and weight? What is the difference between gravity and acceleration? What is the difference between gravity and force? What is the difference between gravity and mass? What is the difference between gravity and acceleration? What is the difference between"
+      }
+    ],
+    "expert_4": [
+      {
+        "query": "What is 2+2?",
+        "response": "What is 2+2? Not 4, but 6\nThe 2+2=4 is a well-known mathematical formula. But what if the answer is not 4, but 6? This is the question that the researchers at the University of California, Berkeley"
+      },
+      {
+        "query": "Explain gravity in simple terms.",
+        "response": "Explain gravity in simple terms. What is the difference between gravity and weight? What is the difference between gravity and acceleration? What is the difference between gravity and force? What is the difference between gravity and mass? What is the difference between gravity and acceleration? What is the difference between"
+      }
+    ]
+  },
+  "timestamp": "2026-02-09T12:24:03.694454"
+}
