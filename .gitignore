@@ -20,3 +20,10 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+mlflow.db
+*.log
+.eggs/
+*.egg-info
+dist/
+build/
+.mypy_cache/
