@@ -15,7 +15,7 @@ MoLE combines a single shared base language model (Llama-3.2-3B) with task-speci
 
 | Metric | Value |
 |--------|-------|
-| Routing Accuracy | 100% (16/16 test queries) |
+| Routing Accuracy | 100% on a 16-query evaluation set (4 per expert category) |
 | Memory (Traditional 4-Model MoE) | 48 GB |
 | Memory (MoLE) | 12.74 GB |
 | Memory Savings | 73.4% |

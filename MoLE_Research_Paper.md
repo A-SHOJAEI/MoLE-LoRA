@@ -1,3 +1,5 @@
+> **Note: This is a project report, not a peer-reviewed publication.**
+
 # MoLE: Mixture of LoRA Experts via Parameter-Efficient Task Specialization
 
 **Alireza Shojaei**
@@ -7,7 +9,7 @@
 
 ## Abstract
 
-We present **MoLE (Mixture of LoRA Experts)**, a parameter-efficient approach to mixture-of-experts that achieves task specialization while reducing memory requirements by 73% compared to traditional multi-model ensembles. By combining a single shared base language model with task-specific Low-Rank Adaptation (LoRA) modules and a learned routing mechanism, MoLE enables scalable expert specialization without the prohibitive memory costs of maintaining multiple full models. We demonstrate that MoLE trained on Llama-3.2-3B (3.2B parameters) achieves 100% routing accuracy on task classification while maintaining stable training dynamics. Our approach requires only 13.5GB of memory versus 48GB for a traditional 4-expert ensemble, making mixture-of-experts practical for resource-constrained deployments.
+We present **MoLE (Mixture of LoRA Experts)**, a parameter-efficient approach to mixture-of-experts that achieves task specialization while reducing memory requirements by 73% compared to traditional multi-model ensembles. By combining a single shared base language model with task-specific Low-Rank Adaptation (LoRA) modules and a learned routing mechanism, MoLE enables scalable expert specialization without the prohibitive memory costs of maintaining multiple full models. We demonstrate that MoLE trained on Llama-3.2-3B (3.2B parameters) achieves 100% routing accuracy on a 16-query evaluation set while maintaining stable training dynamics. Our approach requires only 13.5GB of memory versus 48GB for a traditional 4-expert ensemble, making mixture-of-experts practical for resource-constrained deployments.
 
 **Keywords:** Mixture of Experts, Parameter-Efficient Fine-Tuning, LoRA, Model Compression, Language Models
 
@@ -25,7 +27,7 @@ We introduce **MoLE (Mixture of LoRA Experts)**, a novel architecture that achie
 
 2. **Stable Training Protocol**: We demonstrate stable training of LoRA experts on full (unpruned) models with ultra-conservative hyperparameters, achieving finite losses and bounded gradients throughout training.
 
-3. **Perfect Routing Performance**: Our learned routing mechanism achieves 100% accuracy on task classification, enabling reliable expert selection.
+3. **Perfect Routing Performance**: Our learned routing mechanism achieves 100% accuracy on a 16-query evaluation set (4 per expert category), enabling reliable expert selection. Larger-scale evaluation is needed to confirm generalization.
 
 4. **Scalability**: Adding new experts requires only ~400MB per adapter versus 12GB per full model, enabling practical scaling to many experts.
 
@@ -35,7 +37,7 @@ We introduce **MoLE (Mixture of LoRA Experts)**, a novel architecture that achie
 |----------|-------------|---------------|---------|-------------|
 | **Switch Transformers** (Fedus et al., 2021) | $N \times 12$ | Very High | Learned | Poor |
 | **Pruning + LoRA** | $N \times 6$ | High | - | **Fails** |
-| **MoLE (Ours)** | **13.5** | Moderate | **100%** | **Excellent** |
+| **MoLE (Ours)** | **13.5** | Moderate | **100%** (16 queries) | **Excellent** |
 
 ---
 
@@ -210,7 +212,7 @@ All 4 experts trained successfully with stable dynamics:
 
 ### 5.3 Routing Performance
 
-The router achieved **100% accuracy** on 16 diverse test queries (4 per expert category):
+The router achieved **100% accuracy** on a small evaluation set of 16 test queries (4 per expert category):
 
 **Confusion Matrix:**
 
@@ -367,7 +369,7 @@ Our diagnostic experiments reveal a fundamental incompatibility between structur
 
 ## 9. Conclusion
 
-We introduced **MoLE (Mixture of LoRA Experts)**, a parameter-efficient approach to mixture-of-experts that achieves 73% memory savings compared to traditional multi-model ensembles. Through systematic diagnostic experiments, we demonstrated that structured pruning fundamentally damages model capacity for LoRA fine-tuning, motivating our pruning-free architecture. Our method achieves perfect (100%) routing accuracy and stable training dynamics while enabling practical scaling to many experts.
+We introduced **MoLE (Mixture of LoRA Experts)**, a parameter-efficient approach to mixture-of-experts that achieves 73% memory savings compared to traditional multi-model ensembles. Through systematic diagnostic experiments, we demonstrated that structured pruning fundamentally damages model capacity for LoRA fine-tuning, motivating our pruning-free architecture. Our method achieves 100% routing accuracy on a 16-query evaluation set and stable training dynamics while enabling practical scaling to many experts.
 
 MoLE represents a step toward democratizing mixture-of-experts architectures, making them accessible for resource-constrained deployments. While current generation quality requires improvement through extended training, the architectural contributions—parameter sharing via LoRA, stable training protocols, and learned routing—provide a foundation for future research in efficient expert specialization.
 
@@ -595,7 +597,7 @@ MoLE enables efficient deployment of powerful language models on consumer hardwa
 **Parameters:** 3.2B (base) + 182M (LoRA adapters) + 4M (router) = 3.4B total
 **Memory:** 12.74 GB (FP32)
 **Training Data:** GSM8K (10K), WikiText-103 (30K total)
-**Routing Accuracy:** 100% (16/16 test queries)
+**Routing Accuracy:** 100% on a 16-query evaluation set (16/16 test queries)
 **Intended Use:** Task-specific language generation with automatic expert selection
 **Limitations:** Generation quality requires improvement; single-expert routing
 **License:** Llama 3 Community License
